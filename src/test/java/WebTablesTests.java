@@ -19,7 +19,7 @@ public class WebTablesTests extends BaseTest {
 
         new WebTablesPage()
                 .clickOnAddButton()
-                .registrationFormPage
+                .registrationForm
                     .setFirstName(user.getFirstName())
                     .setLastName(user.getLastName())
                     .setAge(user.getAge())
@@ -44,7 +44,7 @@ public class WebTablesTests extends BaseTest {
 
         new WebTablesPage()
                 .clickOnAddButton()
-                .registrationFormPage
+                .registrationForm
                     .setFirstName(user.getFirstName())
                     .setLastName(user.getLastName())
                     .setAge(user.getAge())
@@ -53,7 +53,7 @@ public class WebTablesTests extends BaseTest {
                     .setDepartment(user.getDepartment())
                     .clickSubmitButton()
                 .clickOnEditButton(user)
-                .registrationFormPage
+                .registrationForm
                     .editFirstName(userEdit.getFirstName())
                     .editLastName(userEdit.getLastName())
                     .editAge(userEdit.getAge())
