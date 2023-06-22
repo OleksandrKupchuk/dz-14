@@ -3,10 +3,12 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class RegistrationForm {
+public class RegistrationForm<T> {
     private WebDriver driver;
-    public RegistrationForm(WebDriver driver) {
+    private T page;
+    public RegistrationForm(WebDriver driver, T page) {
         this.driver = driver;
+        this.page = page;
     }
 
     private By firstName = By.xpath("//input[@id='firstName']");
@@ -17,72 +19,72 @@ public class RegistrationForm {
     private By department = By.xpath("//input[@id='department']");
     private By submitButton = By.id("submit");
 
-    public RegistrationForm setFirstName(String firstName){
+    public RegistrationForm<T> setFirstName(String firstName){
         driver.findElement(this.firstName).sendKeys(firstName);
         return this;
     }
 
-    public RegistrationForm setLastName(String lastName){
+    public RegistrationForm<T> setLastName(String lastName){
         driver.findElement(this.lastName).sendKeys(lastName);
         return this;
     }
 
-    public RegistrationForm setEmail(String email){
+    public RegistrationForm<T> setEmail(String email){
         driver.findElement(this.email).sendKeys(email);
         return this;
     }
 
-    public RegistrationForm setAge(int age){
+    public RegistrationForm<T> setAge(int age){
         driver.findElement(this.age).sendKeys(Integer.toString(age));
         return this;
     }
 
-    public RegistrationForm setSalary(int salary){
+    public RegistrationForm<T> setSalary(int salary){
         driver.findElement(this.salary).sendKeys(Integer.toString(salary));
         return this;
     }
 
-    public RegistrationForm setDepartment(String department){
+    public RegistrationForm<T> setDepartment(String department){
         driver.findElement(this.department).sendKeys(department);
         return this;
     }
 
-    public WebTablesPage clickSubmitButton(){
+    public T clickSubmitButton(){
         driver.findElement(submitButton).click();
-        return new WebTablesPage();
+        return (T) page;
     }
 
-    public RegistrationForm editFirstName(String firstName){
+    public RegistrationForm<T> editFirstName(String firstName){
         driver.findElement(this.firstName).clear();
         setFirstName(firstName);
         return this;
     }
 
-    public RegistrationForm editLastName(String lastName){
+    public RegistrationForm<T> editLastName(String lastName){
         driver.findElement(this.lastName).clear();
         setLastName(lastName);
         return this;
     }
 
-    public RegistrationForm editEmail(String email){
+    public RegistrationForm<T> editEmail(String email){
         driver.findElement(this.email).clear();
         setEmail(email);
         return this;
     }
 
-    public RegistrationForm editAge(int age){
+    public RegistrationForm<T> editAge(int age){
         driver.findElement(this.age).clear();
         setAge(age);
         return this;
     }
 
-    public RegistrationForm editSalary(int salary){
+    public RegistrationForm<T> editSalary(int salary){
         driver.findElement(this.salary).clear();
         setSalary(salary);
         return this;
     }
 
-    public RegistrationForm editDepartment(String department){
+    public RegistrationForm<T> editDepartment(String department){
         driver.findElement(this.department).clear();
         setDepartment(department);
         return this;

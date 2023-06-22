@@ -11,10 +11,10 @@ import java.util.List;
 
 public class WebTablesPage {
     private WebDriver driver;
-    public RegistrationForm registrationForm;
+    public RegistrationForm<WebTablesPage> registrationForm;
     public WebTablesPage() {
         this.driver = BaseTest.getWebDriver();
-        registrationForm = new RegistrationForm(driver);
+        registrationForm = new RegistrationForm<>(driver, this);
     }
 
     private By addButton = By.id("addNewRecordButton");
