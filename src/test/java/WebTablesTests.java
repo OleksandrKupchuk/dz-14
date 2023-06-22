@@ -1,6 +1,8 @@
 import base.BaseTest;
 import data.NameCards;
 import data.NameElements;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import pages.*;
 import user.User;
@@ -19,7 +21,7 @@ public class WebTablesTests extends BaseTest {
 
         new WebTablesPage()
                 .clickOnAddButton()
-                .registrationForm
+                .getRegistrationForm()
                     .setFirstName(user.getFirstName())
                     .setLastName(user.getLastName())
                     .setAge(user.getAge())
@@ -44,7 +46,7 @@ public class WebTablesTests extends BaseTest {
 
         new WebTablesPage()
                 .clickOnAddButton()
-                .registrationForm
+                .getRegistrationForm()
                     .setFirstName(user.getFirstName())
                     .setLastName(user.getLastName())
                     .setAge(user.getAge())
@@ -53,7 +55,7 @@ public class WebTablesTests extends BaseTest {
                     .setDepartment(user.getDepartment())
                     .clickSubmitButton()
                 .clickOnEditButton(user)
-                .registrationForm
+                .getRegistrationForm()
                     .editFirstName(userEdit.getFirstName())
                     .editLastName(userEdit.getLastName())
                     .editAge(userEdit.getAge())

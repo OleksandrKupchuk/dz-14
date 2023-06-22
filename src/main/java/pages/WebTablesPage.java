@@ -11,7 +11,8 @@ import java.util.List;
 
 public class WebTablesPage {
     private WebDriver driver;
-    public RegistrationForm<WebTablesPage> registrationForm;
+    private RegistrationForm<WebTablesPage> registrationForm;
+    public RegistrationForm<WebTablesPage> getRegistrationForm(){ return registrationForm; }
     public WebTablesPage() {
         this.driver = BaseTest.getWebDriver();
         registrationForm = new RegistrationForm<>(driver, this);
