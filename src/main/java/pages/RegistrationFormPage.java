@@ -5,10 +5,8 @@ import org.openqa.selenium.WebDriver;
 
 public class RegistrationFormPage<T> {
     private WebDriver driver;
-    private T obj;
-    public RegistrationFormPage(WebDriver driver, T obj) {
+    public RegistrationFormPage(WebDriver driver) {
         this.driver = driver;
-        this.obj = obj;
     }
 
     private By firstName = By.xpath("//input[@id='firstName']");

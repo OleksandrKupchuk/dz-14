@@ -14,7 +14,7 @@ public class WebTablesPage {
     public RegistrationFormPage<WebTablesPage> registrationFormPage;
     public WebTablesPage() {
         this.driver = BaseTest.getWebDriver();
-        registrationFormPage = new RegistrationFormPage<>(driver, this);
+        registrationFormPage = new RegistrationFormPage<>(driver);
     }
 
     private By addButton = By.id("addNewRecordButton");
