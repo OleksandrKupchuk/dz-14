@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class RegistrationFormPage<T> {
+public class RegistrationFormPage {
     private WebDriver driver;
     public RegistrationFormPage(WebDriver driver) {
         this.driver = driver;
