@@ -7,12 +7,12 @@ import org.testng.Assert;
 
 public class ButtonsPage {
     private WebDriver driver;
+    private String button = "//*[contains(@class, 'btn btn-primary') and text() = '%s']";
+    private By messageClickMe = By.id("dynamicClickMessage");
+
     public ButtonsPage() {
         this.driver = BaseTest.getWebDriver();
     }
-
-    private String button = "//*[contains(@class, 'btn btn-primary') and text() = '%s']";
-    private By messageClickMe = By.id("dynamicClickMessage");
 
     public ButtonsPage clickOnButton(String nameButton){
         driver.findElement(By.xpath(String.format(button, nameButton))).click();

@@ -7,11 +7,11 @@ import org.openqa.selenium.WebDriver;
 
 public class ToolQaMainPage {
     private WebDriver driver;
+    private String card = "//*[@class='card-body']//h5[contains(text(),'%s')]";
+
     public ToolQaMainPage() {
         this.driver = BaseTest.getWebDriver();
     }
-
-    private String card = "//*[@class='card-body']//h5[contains(text(),'%s')]";
 
     public ToolQaMainPage open(){
         driver.get(Config.getProperty(Config.TOOL_QA_URL));

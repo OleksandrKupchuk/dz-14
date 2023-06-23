@@ -6,11 +6,6 @@ import org.openqa.selenium.WebDriver;
 public class RegistrationForm<T> {
     private WebDriver driver;
     private T page;
-    public RegistrationForm(WebDriver driver, T page) {
-        this.driver = driver;
-        this.page = page;
-    }
-
     private By firstName = By.xpath("//input[@id='firstName']");
     private By lastName = By.xpath("//input[@id='lastName']");
     private By email = By.xpath("//input[@id='userEmail']");
@@ -18,6 +13,11 @@ public class RegistrationForm<T> {
     private By salary = By.xpath("//input[@id='salary']");
     private By department = By.xpath("//input[@id='department']");
     private By submitButton = By.id("submit");
+
+    public RegistrationForm(WebDriver driver, T page) {
+        this.driver = driver;
+        this.page = page;
+    }
 
     public RegistrationForm<T> setFirstName(String firstName){
         driver.findElement(this.firstName).sendKeys(firstName);

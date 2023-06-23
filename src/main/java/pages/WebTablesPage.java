@@ -12,16 +12,16 @@ import java.util.List;
 public class WebTablesPage {
     private WebDriver driver;
     private RegistrationForm<WebTablesPage> registrationForm;
+    private By addButton = By.id("addNewRecordButton");
+    private By registeredUser = By.className("rt-tr-group");
+    private By userData = By.className("//div[@class='rt-tr-group']//*[contains(@class, 'rt-td') and text() = 'Cierra']");
+    private String editButton = "edit-record-%s";
     public RegistrationForm<WebTablesPage> getRegistrationForm(){ return registrationForm; }
+
     public WebTablesPage() {
         this.driver = BaseTest.getWebDriver();
         registrationForm = new RegistrationForm<>(driver, this);
     }
-
-    private By addButton = By.id("addNewRecordButton");
-    private By registeredUser = By.className("rt-tr-group");
-    private By userData = By.className("rt-td");
-    private String editButton = "edit-record-%s";
 
     public WebTablesPage clickOnAddButton(){
         driver.findElement(addButton).click();
